@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "PanRocq",
     "section": "",
-    "text": "Introduction\nThis is an example of a Quarto book created using PanRocq in order to format and highlight Rocq code in the html and pdf renderings of the book. PanRocq also works with Typst.\nPanRocq’s formatting and highlighting rules are based on the Rocq-sublime by Matthieu Sozeau (MIT Licence, 2025).",
+    "text": "Introduction\nThis is an example of a Quarto book created using PanRocq in order to format and highlight Rocq code in the html and pdf renderings of the book. PanRocq also works with Typst.\nPanRocq’s formatting and highlighting rules are based on the Rocq-sublime syntax by Matthieu Sozeau (MIT Licence, 2025).",
     "crumbs": [
       "Introduction"
     ]
@@ -104,7 +104,7 @@
     "href": "Troubleshooting.html#unicode",
     "title": "3  Troubleshooting",
     "section": "3.3 Unicode",
-    "text": "3.3 Unicode\nAdditional support is often needed to render Unicode characters properly in the pdf file. This is set up as follows in the _quarto.yml file. Note that a character such as ≼ should still be put behind backticks to render properly in our setup (≼ is obtained by typing `≼` in the source file). Change Latin Modern Roman to DejaVu Sans or similar to be able to use such Unicode characters without backticks.\npdf:\n    documentclass: scrreprt\n    latex-tinytex: false\n    pdf-engine: lualatex\n    include-in-header:\n      text: |\n        \\directlua{luaotfload.add_fallback(\"unicodefallbackinprose\", {\"NotoEmoji:mode=harf;\"})}\n        \\directlua{luaotfload.add_fallback(\"unicodefallbackincodeblocks\", {\"NotoEmoji:mode=harf;\", \"STIX Two Math:mode=harf;\"})}\n        \\setmainfont{Latin Modern Roman}[RawFeature={fallback=unicodefallbackinprose}]\n        \\setmonofont{DejaVu Sans Mono}[RawFeature={fallback=unicodefallbackincodeblocks}]\nTo have :smile: render to 😄 in the HTML version, add the following to _quarto.yml. These will render differently in the pdf file, even if the emoji itself is copy-pasted and put behind backticks 🙃 .\nfrom: markdown+emoji",
+    "text": "3.3 Unicode\nAdditional support is often needed to render Unicode characters properly in the pdf file. This is set up as follows in the _quarto.yml file. Note that a character such as ≼ should still be put behind backticks to render properly in our setup (≼ is obtained by typing `≼` in the source file). Change Latin Modern Roman to DejaVu Sans or similar to be able to use such Unicode characters without backticks.\npdf:\n    documentclass: scrreprt\n    latex-tinytex: false\n    pdf-engine: lualatex\n    include-in-header:\n      text: |\n        \\directlua{luaotfload.add_fallback(\"unicodefallbackinprose\", {\"NotoEmoji:mode=harf;\"})}\n        \\directlua{luaotfload.add_fallback(\"unicodefallbackincodeblocks\", {\"NotoEmoji:mode=harf;\", \"STIX Two Math:mode=harf;\"})}\n        \\setmainfont{Latin Modern Roman}[RawFeature={fallback=unicodefallbackinprose}]\n        \\setmonofont{DejaVu Sans Mono}[RawFeature={fallback=unicodefallbackincodeblocks}]\nTo have :smile: render as 😄 in the HTML version, add the following to _quarto.yml.\nfrom: markdown+emoji\nThese will render differently in the pdf file, even if the emoji itself is copy-pasted and put behind backticks 🙃 .",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Troubleshooting</span>"
     ]
@@ -114,7 +114,7 @@
     "href": "Troubleshooting.html#code-blocks-background",
     "title": "3  Troubleshooting",
     "section": "3.4 Code blocks background",
-    "text": "3.4 Code blocks background\nFor convenience, the \"background-color\" field in the PanRocq.theme file has been set to null. It can be customized, by replacing null by \"#eef2f6\" or any other color. Alternatively, one can set # code-block-bg: \"#eef2f6\" in quarto.yml (but simply setting # code-block-bg: true does not suffice to override null in the pdf version of the book).\nFor more on Quarto’s code highlighting features, visit https://quarto.org/docs/output-formats/html-code.html#highlighting.",
+    "text": "3.4 Code blocks background\nFor convenience, the \"background-color\" field in the PanRocq.theme file has been set to null. It can be customized, by replacing null by \"#eef2f6\" or any other color. Alternatively, one can set code-block-bg: \"#eef2f6\" in _quarto.yml (but simply setting code-block-bg: true does not suffice to override null in the pdf version of the book).\nFor more on Quarto’s code highlighting features, visit https://quarto.org/docs/output-formats/html-code.html#highlighting.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Troubleshooting</span>"
     ]

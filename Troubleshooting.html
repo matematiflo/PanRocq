@@ -447,12 +447,13 @@ window.Quarto = {
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        \directlua{luaotfload.add_fallback("unicodefallbackincodeblocks", {"NotoEmoji:mode=harf;", "STIX Two Math:mode=harf;"})}</span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        \setmainfont{Latin Modern Roman}[RawFeature={fallback=unicodefallbackinprose}]</span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        \setmonofont{DejaVu Sans Mono}[RawFeature={fallback=unicodefallbackincodeblocks}]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>To have <code>:smile:</code> render to 😄 in the HTML version, add the following to <code>_quarto.yml</code>. These will render differently in the pdf file, even if the emoji itself is copy-pasted and put behind backticks <span class="emoji" data-emoji="upside_down_face">🙃</span> .</p>
+<p>To have <code>:smile:</code> render as 😄 in the HTML version, add the following to <code>_quarto.yml</code>.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">from</span><span class="kw">:</span><span class="at"> markdown+emoji</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>These will render differently in the pdf file, even if the emoji itself is copy-pasted and put behind backticks <span class="emoji" data-emoji="upside_down_face">🙃</span> .</p>
 </section>
 <section id="code-blocks-background" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="code-blocks-background"><span class="header-section-number">3.4</span> Code blocks background</h2>
-<p>For convenience, the <code>"background-color"</code> field in the <code>PanRocq.theme</code> file has been set to <code>null</code>. It can be customized, by replacing <code>null</code> by <code>"#eef2f6"</code> or any other color. Alternatively, one can set <code># code-block-bg: "#eef2f6"</code> in <code>quarto.yml</code> (but simply setting <code># code-block-bg: true</code> does not suffice to override <code>null</code> <em>in the pdf version</em> of the book).</p>
+<p>For convenience, the <code>"background-color"</code> field in the <code>PanRocq.theme</code> file has been set to <code>null</code>. It can be customized, by replacing <code>null</code> by <code>"#eef2f6"</code> or any other color. Alternatively, one can set <code>code-block-bg: "#eef2f6"</code> in <code>_quarto.yml</code> (but simply setting <code>code-block-bg: true</code> does not suffice to override <code>null</code> <em>in the pdf version</em> of the book).</p>
 <p>For more on Quarto’s code highlighting features, visit <a href="https://quarto.org/docs/output-formats/html-code.html#highlighting" class="uri">https://quarto.org/docs/output-formats/html-code.html#highlighting</a>.</p>
 
 
