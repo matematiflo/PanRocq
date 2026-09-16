@@ -1,0 +1,122 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "PanRocq",
+    "section": "",
+    "text": "Introduction\nThis is an example of a Quarto book created using PanRocq in order to format and highlight Rocq code in the html and pdf renderings of the book. PanRocq also works with Typst.\nPanRocq’s formatting and highlighting rules are based on the Rocq-sublime by Matthieu Sozeau (MIT Licence, 2025).",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "PanRocq.html",
+    "href": "PanRocq.html",
+    "title": "1  Setup",
+    "section": "",
+    "text": "1.1 Quarto\nAdd the files PanRocq.theme and PanRocq.xml to the root folder of your Quarto project. Then add the following syntax-definitions and highlight-style fields to the _quarto.yml file.\nAny Quarto code block starting with a rocq fence will then be highlighted. See Section 2.1 for an example. PanRocq is intended as a highlighting tool in light mode, where it matches standard Rocq highlighting rules. However, we have also included a version for Quarto’s dark mode (see PanRocq-dark.theme), which can be configured as follows.\nIt renders reasonably well with the Quarto themes darkly, slate, solar and superhero, but in that case we recommend importing the styles.css file that we provide if you want to use a scroll bar to deal with code block overflows.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Setup</span>"
+    ]
+  },
+  {
+    "objectID": "PanRocq.html#quarto",
+    "href": "PanRocq.html#quarto",
+    "title": "1  Setup",
+    "section": "",
+    "text": "format:\n  html:\n    theme: cosmo\n    syntax-definitions:\n      - ./PanRocq.xml\n    highlight-style: ./PanRocq.theme\n  pdf:\n    documentclass: scrreprt\n    syntax-definitions:\n      - ./PanRocq.xml\n    highlight-style: ./PanRocq.theme\n\nformat:\n  html:\n    theme:\n      light: [cosmo, brand]\n      dark: [solar, brand]\n    css: styles.css\n    syntax-definitions:\n      - ./PanRocq.xml\n    highlight-style:\n      light: ./PanRocq.theme\n      dark: ./PanRocq-dark.theme",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Setup</span>"
+    ]
+  },
+  {
+    "objectID": "PanRocq.html#typst",
+    "href": "PanRocq.html#typst",
+    "title": "1  Setup",
+    "section": "1.2 Typst",
+    "text": "1.2 Typst\nAdd the files Rocq.sublime-syntax and Rocq.tmTheme to your Typst directory. Then add the following to your .typ file.\n#set raw(syntaxes: \"Rocq.sublime-syntax\", lang: \"rocq\", theme: \"Rocq.tmTheme\")\nAny Typst code block starting with a rocq fence will then be highlighted. See Section 2.2 for an example.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Setup</span>"
+    ]
+  },
+  {
+    "objectID": "Usage.html",
+    "href": "Usage.html",
+    "title": "2  Usage",
+    "section": "",
+    "text": "2.1 Quarto",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Usage</span>"
+    ]
+  },
+  {
+    "objectID": "Usage.html#sec-usage-quarto",
+    "href": "Usage.html#sec-usage-quarto",
+    "title": "2  Usage",
+    "section": "",
+    "text": "2.1.1 Rendering\nDefinition negb (b : bool) : bool :=\n  match b with\n  | true  =&gt; false\n  | false =&gt; true\n  end.\n\n\n2.1.2 Source\n```rocq\nDefinition negb (b : bool) : bool :=\n  match b with\n  | true  =&gt; false\n  | false =&gt; true\n  end.\n```",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Usage</span>"
+    ]
+  },
+  {
+    "objectID": "Usage.html#sec-usage-typst",
+    "href": "Usage.html#sec-usage-typst",
+    "title": "2  Usage",
+    "section": "2.2 Typst",
+    "text": "2.2 Typst\n\n2.2.1 Rendering\nWhen you compile your .typ file, the code blocks will be rendered using PanRocq in the .pdf file.\ntypst c Typst/Exercises.typ\n\n\n2.2.2 Source\n```rocq\nInductive list (A : Type) : Type :=\n| nil  : list A\n| cons : A → list A → list A.\n```",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Usage</span>"
+    ]
+  },
+  {
+    "objectID": "Troubleshooting.html",
+    "href": "Troubleshooting.html",
+    "title": "3  Troubleshooting",
+    "section": "",
+    "text": "3.1 Quarto\nThis book was compiled with Quarto 1.9.37 using the lua-latex engine. The LaTeX package fvextra is used to wrap lines in code blocks when rendering .qmd to .pdf. This is set up as follows in the _quarto.yml file.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Troubleshooting</span>"
+    ]
+  },
+  {
+    "objectID": "Troubleshooting.html#quarto",
+    "href": "Troubleshooting.html#quarto",
+    "title": "3  Troubleshooting",
+    "section": "",
+    "text": "pdf:\n    documentclass: scrreprt\n    latex-tinytex: false\n    pdf-engine: lualatex\n    code-overflow: wrap\n    include-in-header:\n      text: |\n        \\usepackage{fvextra}\n        \\DefineVerbatimEnvironment{Highlighting}{Verbatim}{\n          breaklines, commandchars = \\\\\\{\\}\n        } % this is used to wrap lines in code blocks when rendering .qmd to .pdf\n    syntax-definitions:\n      - ./PanRocq.xml\n    highlight-style: ./PanRocq.theme",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Troubleshooting</span>"
+    ]
+  },
+  {
+    "objectID": "Troubleshooting.html#typst",
+    "href": "Troubleshooting.html#typst",
+    "title": "3  Troubleshooting",
+    "section": "3.2 Typst",
+    "text": "3.2 Typst\nOccasionally, you might need to add a missing Unicode character to Rocq.sublime-syntax, for instance U+227C to render ≼ , which is \\preccurlyeq in LaTeX (\\(\\preccurlyeq\\)), and which can be added to the operator field of Rocq.sublime-syntax.\nvariables:\n  operator: '(&lt;existing_syntax&gt;|\\u{227C})'",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Troubleshooting</span>"
+    ]
+  },
+  {
+    "objectID": "Troubleshooting.html#unicode",
+    "href": "Troubleshooting.html#unicode",
+    "title": "3  Troubleshooting",
+    "section": "3.3 Unicode",
+    "text": "3.3 Unicode\nAdditional support is often needed to render Unicode characters properly in the pdf file. This is set up as follows in the _quarto.yml file. Note that a character such as ≼ should still be put behind backticks to render properly in our setup (≼ is obtained by typing `≼` in the source file). Change Latin Modern Roman to DejaVu Sans or similar to be able to use such Unicode characters without backticks.\npdf:\n    documentclass: scrreprt\n    latex-tinytex: false\n    pdf-engine: lualatex\n    include-in-header:\n      text: |\n        \\directlua{luaotfload.add_fallback(\"unicodefallbackinprose\", {\"NotoEmoji:mode=harf;\"})}\n        \\directlua{luaotfload.add_fallback(\"unicodefallbackincodeblocks\", {\"NotoEmoji:mode=harf;\", \"STIX Two Math:mode=harf;\"})}\n        \\setmainfont{Latin Modern Roman}[RawFeature={fallback=unicodefallbackinprose}]\n        \\setmonofont{DejaVu Sans Mono}[RawFeature={fallback=unicodefallbackincodeblocks}]\nTo have :smile: render to 😄 in the HTML version, add the following to _quarto.yml. These will render differently in the pdf file, even if the emoji itself is copy-pasted and put behind backticks 🙃 .\nfrom: markdown+emoji",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Troubleshooting</span>"
+    ]
+  },
+  {
+    "objectID": "Troubleshooting.html#code-blocks-background",
+    "href": "Troubleshooting.html#code-blocks-background",
+    "title": "3  Troubleshooting",
+    "section": "3.4 Code blocks background",
+    "text": "3.4 Code blocks background\nFor convenience, the \"background-color\" field in the PanRocq.theme file has been set to null. It can be customized, by replacing null by \"#eef2f6\" or any other color. Alternatively, one can set # code-block-bg: \"#eef2f6\" in quarto.yml (but simply setting # code-block-bg: true does not suffice to override null in the pdf version of the book).\nFor more on Quarto’s code highlighting features, visit https://quarto.org/docs/output-formats/html-code.html#highlighting.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Troubleshooting</span>"
+    ]
+  }
+]

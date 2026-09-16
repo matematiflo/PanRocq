@@ -1,0 +1,27 @@
+/* Custom scrollbars for scrollable code blocks */
+.sourceCode pre,
+div.sourceCode {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(128, 128, 128, 0.3) transparent;
+}
+
+.sourceCode pre::-webkit-scrollbar,
+div.sourceCode::-webkit-scrollbar {
+  height: 6px;
+}
+
+.sourceCode pre::-webkit-scrollbar-track,
+div.sourceCode::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sourceCode pre::-webkit-scrollbar-thumb,
+div.sourceCode::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.3);
+  border-radius: 3px;
+}
+
+.sourceCode pre::-webkit-scrollbar-thumb:hover,
+div.sourceCode::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(128, 128, 128, 0.6);
+}
