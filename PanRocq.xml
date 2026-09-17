@@ -21,6 +21,7 @@
     dsComment      -> Comment
 -->
 <language name="Rocq" version="1" section="Sources"
+          alternativeNames="rocq;coq;Coq"
           extensions="*.v" mimetype="text/x-rocq" casesensitive="true"
           author="Converted from Rocq.sublime-syntax" license="MIT">
   <highlighting>
