@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "PanRocq",
     "section": "",
-    "text": "Introduction\nThis is an example of a Quarto book created using PanRocq in order to format and highlight Rocq code in the html and pdf renderings of the book. PanRocq also works with Typst.\nPanRocq’s formatting and highlighting rules are based on the Rocq-sublime syntax by Matthieu Sozeau (MIT Licence, 2025).",
+    "text": "Introduction\nThis is an example of a Quarto book that uses PanRocq to highlight Rocq code. PanRocq also works with Typst.\nPanRocq’s formatting and highlighting rules are based on the Rocq-sublime syntax by Matthieu Sozeau (MIT Licence, 2025).",
     "crumbs": [
       "Introduction"
     ]
@@ -24,7 +24,7 @@
     "href": "PanRocq.html#quarto",
     "title": "1  Setup",
     "section": "",
-    "text": "format:\n  html:\n    theme: cosmo\n    syntax-definitions:\n      - ./PanRocq.xml\n    highlight-style: ./PanRocq.theme\n  pdf:\n    documentclass: scrreprt\n    syntax-definitions:\n      - ./PanRocq.xml\n    highlight-style: ./PanRocq.theme\n\nformat:\n  html:\n    theme:\n      light: [cosmo, brand]\n      dark: [solar, brand]\n    css: styles.css\n    syntax-definitions:\n      - ./PanRocq.xml\n    highlight-style:\n      light: ./PanRocq.theme\n      dark: ./PanRocq-dark.theme",
+    "text": "format:\n  html:\n    theme: cosmo\n    syntax-definitions:\n      - ./PanRocq.xml\n    highlight-style: ./PanRocq.theme\n  pdf:\n    documentclass: scrreprt\n    syntax-definitions:\n      - ./PanRocq.xml\n    highlight-style: ./PanRocq.theme\n\nformat:\n  html:\n    theme:\n      light: cosmo\n      dark: solar\n    css: styles.css\n    syntax-definitions:\n      - ./PanRocq.xml\n    highlight-style:\n      light: ./PanRocq.theme\n      dark: ./PanRocq-dark.theme",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Setup</span>"
     ]
@@ -64,7 +64,7 @@
     "href": "Usage.html#sec-usage-typst",
     "title": "2  Usage",
     "section": "2.2 Typst",
-    "text": "2.2 Typst\n\n2.2.1 Rendering\nWhen you compile your .typ file, the code blocks will be rendered using PanRocq in the .pdf file.\ntypst c Typst/Exercises.typ\n\n\n2.2.2 Source\n```rocq\nInductive list (A : Type) : Type :=\n| nil  : list A\n| cons : A → list A → list A.\n```",
+    "text": "2.2 Typst\n\n2.2.1 Rendering\nWhen you compile your .typ file, the code blocks will be rendered using PanRocq in the .pdf file. As an example, you can look at this exercise sheet.\ntypst c Typst/Exercises.typ\n\n\n2.2.2 Source\n```rocq\nInductive list (A : Type) : Type :=\n| nil  : list A\n| cons : A → list A → list A.\n```",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Usage</span>"
     ]
@@ -74,7 +74,7 @@
     "href": "Troubleshooting.html",
     "title": "3  Troubleshooting",
     "section": "",
-    "text": "3.1 Quarto\nThis book was compiled with Quarto 1.9.37 using the lua-latex engine. The LaTeX package fvextra is used to wrap lines in code blocks when rendering .qmd to .pdf. This is set up as follows in the _quarto.yml file.",
+    "text": "3.1 Quarto\nThis book was Created using Quarto 1.10.18. The LaTeX package [fvextra](https://ctan.org/pkg/fvextra) is used to wrap lines in code blocks when rendering.qmdto.pdf. This is set up as follows in the_quarto.yml` file.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Troubleshooting</span>"
     ]
