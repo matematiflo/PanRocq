@@ -2,7 +2,7 @@
 
 ## Quarto
 
-This book was Created using [Quarto 1.10.18](https://github.com/quarto-dev/quarto-cli)`. The LaTeX package [fvextra](https://ctan.org/pkg/fvextra) is used to wrap lines in code blocks when rendering `.qmd` to `.pdf`. This is set up as follows in the `_quarto.yml` file.
+This book was Created using [Quarto 1.10.18](https://github.com/quarto-dev/quarto-cli). The LaTeX package [fvextra](https://ctan.org/pkg/fvextra) is used to wrap lines in code blocks when rendering `.qmd` to `.pdf`. This is set up as follows in the `_quarto.yml` file.
 
 ```yml
 pdf:
