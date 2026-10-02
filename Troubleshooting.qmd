@@ -71,6 +71,21 @@ from: markdown+emoji
 
 These will render differently in the pdf file, even if the emoji itself is copy-pasted and put behind backticks :upside_down_face: .
 
+::: {.callout-warning}
+
+For emojis to render properly, you will also need the [Noto Emoji](https://fonts.google.com/noto/specimen/Noto+Emoji) font, which you can download from Google or install via a package manager (e.g. `brew install --cask font-noto-emoji`). Once you have it, run the following commands.
+
+```bash
+luaotfload-tool --update  # or luaotfload-tool --update --force
+luaotfload-tool --find="NotoEmoji"
+```
+
+The first one will refresh your font cache and the second one should find the `NotoEmoji` font inside `~/Library/Fonts/`.  If it only finds it in `/usr/local/texlive` or similar, this will not be sufficient for Quarto.
+
+Then run `quarto render` again and you should see the emojis in your pdf file.
+
+:::
+
 ## Code blocks background
 
 For convenience, the `"background-color"` field in the `PanRocq.theme` file has been set to `null`. It can be customized, by replacing `null` by `"#eef2f6"` or any other color. Alternatively, one can set `code-block-bg: "#eef2f6"` in `_quarto.yml` (but simply setting `code-block-bg: true` does not suffice to override `null` *in the pdf version* of the book).
