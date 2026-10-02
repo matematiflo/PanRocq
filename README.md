@@ -40,13 +40,22 @@ Definition negb (b : bool) : bool :=
 
 ## Using PanRocq with Typst
 
-Add the files `Rocq.sublime-syntax` and `Rocq.tmTheme` to your Typst directory. Then add the following to your `.typ` file.
+Add the files `Rocq.sublime-syntax` and `Rocq.tmTheme` to your working directory. Then add the following to your `.typ` file.
 
 ```typst
 #set raw(syntaxes: "Rocq.sublime-syntax", lang: "rocq", theme: "Rocq.tmTheme")
 ```
 
 Any Typst code block starting with a `rocq` fence will then be highlighted.
+
+## Using PanRocq with Pandoc
+
+Add the file `PanRocq.xml` to your working directory. Then convert a Markdown file with a `rocq` code block to HTML or PDF as follows.
+
+```bash
+pandoc Pandoc_MWE.md --standalone --syntax-definition=PanRocq.xml -o Pandoc_MWE.html
+pandoc Pandoc_MWE.md --syntax-definition=PanRocq.xml -o Pandoc_MWE.pdf
+```
 
 ## Troubleshooting
 

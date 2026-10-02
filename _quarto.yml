@@ -1,7 +1,13 @@
 project:
   type: book
   resources:
-    - "Typst/*.pdf"
+    - "Quarto_MWE.qmd"
+    - "Quarto_MWE.pdf"
+    - "Typst/Exercises.typ"
+    - "Typst/Exercises.pdf"
+    - "Pandoc_MWE.md"
+    - "Pandoc_MWE.html"
+    - "Pandoc_MWE.pdf"
 
 lang: en
 from: markdown+emoji
@@ -18,7 +24,7 @@ book:
   favicon: logo.jpg
   chapters:
     - index.qmd
-    - PanRocq.qmd
+    - Setup.qmd
     - Usage.qmd
     - Troubleshooting.qmd
 

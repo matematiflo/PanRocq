@@ -2,8 +2,26 @@
 format:
   html:
     other-links:
-      - text: Exercise sheet (Typst)
+      - text: Quarto MWE (source)
+        href: ./Quarto_MWE.qmd
+        icon: code
+      - text: Quarto MWE (pdf)
+        href: ./Quarto_MWE.pdf
+        icon: file-earmark-pdf
+      - text: Exercise sheet (Typst MWE)
+        href: ./Typst/Exercises.typ
+        icon: code
+      - text: Exercise sheet
         href: ./Typst/Exercises.pdf
+        icon: file-earmark-pdf
+      - text: Pandoc MWE (source)
+        href: ./Pandoc_MWE.md
+        icon: markdown
+      - text: Pandoc MWE (html)
+        href: ./Pandoc_MWE.html
+        icon: filetype-html
+      - text: Pandoc MWE (pdf)
+        href: ./Pandoc_MWE.pdf
         icon: file-earmark-pdf
 ---
 
@@ -11,19 +29,33 @@ format:
 
 ## Quarto {#sec-usage-quarto}
 
-### Rendering
+Be sure to set up Quarto as indicated in @sec-setup-quarto first. Then convert the Quarto file to HTML or PDF.
 
-```rocq
-Definition negb (b : bool) : bool :=
-  match b with
-  | true  => false
-  | false => true
-  end.
-```
+### Quarto Minimal Working Example
 
-### Source
+````markdown
+---
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: solar
+    css: styles.css
+    syntax-definitions:
+      - ./PanRocq.xml
+    highlight-style:
+      light: ./PanRocq.theme
+      dark: ./PanRocq-dark.theme
+  pdf:
+    documentclass: scrreprt
+    syntax-definitions:
+      - ./PanRocq.xml
+    highlight-style: ./PanRocq.theme
+format-links: false # [pdf]
+---
 
-````default
+Here is a minimal working example.
+
 ```rocq
 Definition negb (b : bool) : bool :=
   match b with
@@ -33,22 +65,117 @@ Definition negb (b : bool) : bool :=
 ```
 ````
 
+### Quarto HTML conversion
+
+
+```bash
+quarto render Example.qmd --to html
+```
+
+Here is a minimal working example.
+
+```rocq
+Definition negb (b : bool) : bool :=
+  match b with
+  | true  => false
+  | false => true
+  end.
+```
+
+### Quarto PDF compilation
+
+```bash
+quarto render Example.qmd --to pdf
+```
+
+Here is the [PDF rendering](https://matematiflo.github.io/PanRocq/Quarto_MWE.pdf) of the example [above](#quarto-minimal-working-example).
+
 ## Typst {#sec-usage-typst}
 
-### Rendering
+Be sure to set up Typst as indicated in @sec-setup-typst first. Then compile the `.typ` file to HTML or PDF.
 
-When you compile your `.typ` file, the code blocks will be rendered using PanRocq in the `.pdf` file. As an example, you can look at this [exercise sheet](https://matematiflo.github.io/PanRocq/Typst/Exercises.pdf).
+### Typst Minimal Working Example
+
+````typ
+#set raw(syntaxes: "Rocq.sublime-syntax", lang: "rocq", theme: "Rocq.tmTheme")
+
+```rocq
+From Stdlib Require Import List.
+Import ListNotations.
+```
+
+Recall the definition of the type of lists with entries in a type `A`.
+
+```rocq
+Inductive list (A : Type) : Type :=
+| nil  : list A
+| cons : A → list A → list A.
+
+Arguments nil {A}.
+Arguments cons {A} a l.
+
+Infix "::" := cons (at level 60, right associativity) : list_scope.
+```
+
+Recall also the definition of the function `negb`.
+
+```rocq
+Definition negb (b : bool) : bool :=
+  match b with
+  | true  => false
+  | false => true
+  end.
+```
+
+*Exercise 1*
+
+Write a function `length : list A → nat` that returns the length of a list.
+
+*Exercise 2*
+
+Prove the following result: 
+
+```rocq
+Theorem negb_inv (b : bool) : negb (negb b) = b.
+```
+````
+
+### Typst PDF compilation
 
 ```bash
 typst c Typst/Exercises.typ
 ```
 
-### Source
+For the PDF rendering of the example [above](#typst-minimal-working-example), you can look at this [exercise sheet](https://matematiflo.github.io/PanRocq/Typst/Exercises.pdf).
 
-````default
+## Pandoc {#sec-usage-pandoc}
+
+Be sure to set up your working directory as indicated in @sec-setup-pandoc first. Then convert the Markdown file to HTML or PDF using Pandoc.
+
+### Pandoc Minimal Working Example
+
+This is a markdown file.
+
+````markdown
+Here is a minimal working example.
+
 ```rocq
-Inductive list (A : Type) : Type :=
-| nil  : list A
-| cons : A → list A → list A.
+Definition negb (b : bool) : bool :=
+  match b with
+  | true  => false
+  | false => true
+  end.
 ```
 ````
+
+### Pandoc HTML conversion
+
+```bash
+pandoc Pandoc_MWE.md --standalone --syntax-definition=PanRocq.xml -o Pandoc_MWE.html
+```
+
+### Pandoc PDF compilation
+
+```bash
+pandoc Pandoc_MWE.md --syntax-definition=PanRocq.xml -o Pandoc_MWE.pdf
+```

@@ -30,6 +30,22 @@ variables:
   operator: '(<existing_syntax>|\u{227C})'
 ```
 
+## Pandoc
+
+When using Pandoc to convert a Markdown file to HTML, be sure to include the `--standalone` flag, or the Rocq code will not be highlighted. Another option is to include the following YAML code in a file `render.yml` located in your working directory.
+
+``` yaml
+standalone: true
+syntax-definition: PanRocq.xml
+```
+
+Then use Pandoc as follows:
+
+```bash
+Pandoc Pandoc_MWE.md -d Pandoc_render.yml -o Pandoc_MWE.html 
+```
+
+
 ## Unicode
 
 Additional support is often needed to render Unicode characters properly in the pdf file. This is set up as follows in the `_quarto.yml` file. Note that a character such as `≼` should still be put behind backticks to render properly in our setup (`≼` is obtained by typing ``` `≼` ``` in the source file). Change `Latin Modern Roman` to `DejaVu Sans` or similar to be able to use such Unicode characters without backticks.
@@ -49,7 +65,7 @@ pdf:
 
 To have `:smile:` render as 😄 in the HTML version, add the following to `_quarto.yml`.
 
-```yml
+```yaml
 from: markdown+emoji
 ```
 

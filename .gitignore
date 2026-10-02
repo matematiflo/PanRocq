@@ -36,6 +36,7 @@ _minted-*/
 /_book
 /docs
 **/*.quarto_ipynb
+/Quarto_MWE_files/
 
 # Other
 /.luarc.json

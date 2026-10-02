@@ -1,6 +1,6 @@
 # Setup
 
-## Quarto
+## Quarto {#sec-setup-quarto}
 
 Add the files `PanRocq.theme` and `PanRocq.xml` to the root folder of your Quarto project. Then add the following `syntax-definitions` and `highlight-style` fields to the `_quarto.yml` file.
 
@@ -36,7 +36,7 @@ format:
 
 It renders reasonably well with the [Quarto themes](https://quarto.org/docs/output-formats/html-themes.html) `darkly`, `slate`, `solar` and `superhero`, but in that case we recommend importing the `styles.css` file that we provide if you want to use a scroll bar to deal with code block overflows.
 
-## Typst
+## Typst {#sec-setup-typst}
 
 Add the files `Rocq.sublime-syntax` and `Rocq.tmTheme` to your Typst directory. Then add the following to your `.typ` file.
 
@@ -45,3 +45,7 @@ Add the files `Rocq.sublime-syntax` and `Rocq.tmTheme` to your Typst directory. 
 ```
 
 Any Typst code block starting with a `rocq` fence will then be highlighted. See @sec-usage-typst for an example.
+
+## Pandoc {#sec-setup-pandoc}
+
+Add the file `PanRocq.xml` to your working directory. See @sec-usage-pandoc for an example.
