@@ -59,4 +59,4 @@ pandoc Pandoc_MWE.md --syntax-definition=PanRocq.xml -o Pandoc_MWE.pdf
 
 ## Troubleshooting
 
-Created using [Quarto 1.10.18](https://github.com/quarto-dev/quarto-cli). See the [documentation](https://matematiflo.github.io/PanRocq/Troubleshooting.html) for more.
+Created using [Quarto 1.10.18](https://github.com/quarto-dev/quarto-cli) and LuaHBTeX, Version 1.24.0 (from [TeX Live 2026](https://tug.org/texlive/)). See the [documentation](https://matematiflo.github.io/PanRocq/Troubleshooting.html) for more.
