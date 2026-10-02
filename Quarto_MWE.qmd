@@ -1,0 +1,29 @@
+---
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: solar
+    css: styles.css
+    syntax-definitions:
+      - ./PanRocq.xml
+    highlight-style:
+      light: ./PanRocq.theme
+      dark: ./PanRocq-dark.theme
+  pdf:
+    documentclass: scrreprt
+    syntax-definitions:
+      - ./PanRocq.xml
+    highlight-style: ./PanRocq.theme
+format-links: false # [pdf]
+---
+
+Here is a minimal working example.
+
+```rocq
+Definition negb (b : bool) : bool :=
+  match b with
+  | true  => false
+  | false => true
+  end.
+```
