@@ -363,6 +363,8 @@ contexts:
       pop: true
     - match: ';'
       scope: punctuation.separator.rocq
+    - match: '\|(?![|\-])'
+      scope: keyword.operator.rocq
     - include: term
   term_pipe:
     - match: '\|'
