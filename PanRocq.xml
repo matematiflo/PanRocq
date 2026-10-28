@@ -22,6 +22,7 @@
 -->
 <language name="Rocq" version="1" section="Sources"
           alternativeNames="rocq;coq;Coq"
+          kateversion="5.0"
           extensions="*.v" mimetype="text/x-rocq" casesensitive="true"
           author="Converted from Rocq.sublime-syntax" license="MIT">
   <highlighting>
@@ -402,7 +403,7 @@
 
   <general>
     <comments>
-      <comment name="multiline" start="(*" end="*)" region="Comment"/>
+      <comment name="multiLine" start="(*" end="*)" region="Comment"/>
     </comments>
     <keywords casesensitive="true"/>
   </general>
