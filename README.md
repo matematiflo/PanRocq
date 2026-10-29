@@ -2,7 +2,7 @@
 
 This is an example of a [Quarto book](https://quarto.org/docs/books) that uses PanRocq to highlight Rocq code. PanRocq also works with [Typst](https://typst.app/#start).
 
-PanRocq's highlighting rules are based on the [Rocq-sublime](https://github.com/mattam82/rocq-sublime) syntax by Matthieu Sozeau (MIT Licence, 2025).
+PanRocq's highlighting rules are based on the [Rocq-sublime](https://github.com/mattam82/rocq-sublime) syntax by [Matthieu Sozeau](https://sozeau.gitlabpages.inria.fr/www/) (MIT Licence, 2025).
 
 ## Basic setup
 
